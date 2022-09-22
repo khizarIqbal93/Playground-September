@@ -63,6 +63,8 @@ Once on the page:
 
 Navigate to API Gateway
 
+> :bangbang: Ideally we would want a REST API however, for the purposes of this demonstration, lets keep it simple with a HTTP API :bangbang:
+
 1. Click **create API**
 2. Click build on **HTTP API**
 3. Name your API `<your_panda_name>_api`
