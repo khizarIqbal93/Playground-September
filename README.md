@@ -47,10 +47,14 @@ Once on the page:
 ### Now lets give our lambda permission to send messages to our queue
 
 5. Navigate to configuration > permissions
-   ![lambda permission2](./screenshots/lambda_1/lambda_3.png)
 6. Click on the Role name under Execution role
+   ![lambda permission2](./screenshots/lambda_1/lambda_3.png)
 7. A new tab will open, click add permission and select attach policy
+   ![lambda permission3](./screenshots/lambda_1/lambda_4.png)
 8. Search for SQS and select `AmazonSQSFullAccess` and click attach policy
+   ![lambda permission4](./screenshots/lambda_1/lambda_5.png)
+
+> Note: In the real world you would want to keep the permissions tighter!
 
 ---
 
@@ -68,7 +72,7 @@ Navigate to API Gateway
 6. Select PUT method and set resource path to `/order_status`
 7. Click next and next again and then create finally
 
-You can now see if it works by making a **PUT** request to your invoke url followed by the path `/order_status` using your favourite API client. You should recieve a 200 OK response with "Hello from Lambda!" in the body!
+You can now see if it works by making a **PUT** request to your invoke url followed by the path `/order_status` using your favourite API client. You should receive a 200 OK response with "Hello from Lambda!" in the body!
 
 ---
 
@@ -95,6 +99,8 @@ QueueUrl: 'QUEUE URL HERE',
 
 6. Check the response to see if it was successful!
 7. You can view the message in the queue by going to your queue and clicking `send and receive messages` and then clicking `Poll for messages`
+
+---
 
 ## 5. Set up SQS poller lambda
 
