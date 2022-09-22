@@ -59,23 +59,27 @@ Once on the page:
 
 ---
 
-## 3. Create an API
-
-Navigate to API Gateway
+## 3. Create an API and route
 
 > :bangbang: Ideally we would want a REST API however, for the purposes of this demonstration, lets keep it simple with a HTTP API :bangbang:
 
-1. Click **create API**
+1. Navigate to API Gateway
 2. Click build on **HTTP API**
+   ![api build](./screenshots/api_gw_1.png)
 3. Name your API `<your_panda_name>_api`
 4. Click add integration
    - Select lambda from the drop down menu
    - Choose the lambda function you created previously
+     ![api integration](./screenshots/api_gw_2.png)
 5. Click next
 6. Select PUT method and set resource path to `/order_status`
+   ![api routes](./screenshots/api_gw_3.png)
+
 7. Click next and next again and then create finally
 
-You can now see if it works by making a **PUT** request to your invoke url followed by the path `/order_status` using your favourite API client. You should receive a 200 OK response with "Hello from Lambda!" in the body!
+You can now see if it works by making a **PUT** request to your invoke url followed by the path `/order_status` using your favourite API client. You should receive a `200 OK` response with `"Hello from Lambda!"` in the body!
+
+> You are doing great!
 
 ---
 
