@@ -54,7 +54,7 @@ Once on the page:
 8. Search for SQS and select `AmazonSQSFullAccess` and click attach policy
    ![lambda permission4](./screenshots/lambda_1/lambda_5.png)
 
-> Note: In the real world you would want to keep the permissions tighter!
+> :warning: Note: In the real world you would want to keep the permissions tighter!
 
 ---
 
