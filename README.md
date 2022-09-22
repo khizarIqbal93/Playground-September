@@ -40,13 +40,14 @@ Once on the page:
 1. Click create function
 2. Name your function `<your_panda_name>_order_handler_lambda`
 3. Select the configuration below
-   ![lambda configuration](./screenshots/lambda_1.png)
-   ![lambda permission](./screenshots/lambda_2.png)
+   ![lambda configuration](./screenshots//lambda_1/lambda_1.png)
+   ![lambda permission1](./screenshots/lambda_1/lambda_2.png)
 4. Click **Create function**
 
 ### Now lets give our lambda permission to send messages to our queue
 
 5. Navigate to configuration > permissions
+   ![lambda permission2](./screenshots/lambda_1/lambda_3.png)
 6. Click on the Role name under Execution role
 7. A new tab will open, click add permission and select attach policy
 8. Search for SQS and select `AmazonSQSFullAccess` and click attach policy
