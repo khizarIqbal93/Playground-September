@@ -1,4 +1,13 @@
-# Playground-September
+# DevOps Playground September 2020
+
+![Panda](https://ecsddopg.wpengine.com/wp-content/uploads/2019/01/181212-Stickers-final-A-600x600.png)
+
+# Prerequisites
+
+- Modern browser
+- An API Client such as [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
+
+---
 
 ## 1. Create a Queue!
 
@@ -7,13 +16,18 @@ On your AWS management console, search for **SQS** using the search bar
 Once on the page:
 
 1. Click Create Queue
-2. Select standard
+2. Select **_Standard_**
 3. Name your queue `<your_panda_name>_notification_queue`
 4. In configuration set receive message wait time to 10
+   ![SQS configuration](./screenshots/sqs_1.png)
 5. Disable server-side encryption (we won't be using it for this demo)
-6. Finally click **create queue**
+6. Set the following access policy for this demo
+   ![SQS access policy](./screenshots/sqs_2.png)
+7. Finally click **create queue**
 
-We now have our very own messaging queue!
+We now have our very own messaging queue! :tada:
+
+---
 
 ## 2. Create a lambda function
 
@@ -31,7 +45,7 @@ Now lets give our lambda permission to send messages to our queue
 5. Navigate to configuration > permissions
 6. Click on the Role name under Execution role
 7. A new tab will open, click add permission and select attach policy
-8. Search for SQS and select `AWSLambdaSQSQueueExecutionRole` and click attach policy
+8. Search for SQS and select `AmazonSQSFullAccess` and click attach policy
 
 ## 3. Create an API
 
