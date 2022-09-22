@@ -1,4 +1,4 @@
-# DevOps Playground September 2020
+# DevOps Playground September 2022
 
 ![Panda](https://ecsddopg.wpengine.com/wp-content/uploads/2019/01/181212-Stickers-final-A-600x600.png)
 
@@ -25,27 +25,33 @@ Once on the page:
    ![SQS access policy](./screenshots/sqs_2.png)
 7. Finally click **create queue**
 
-We now have our very own messaging queue! :tada:
+### We now have our very own messaging queue! :tada:
 
 ---
 
 ## 2. Create a lambda function
 
-On a separate tab in your browser navigate to the **lambda** page on the aws console using the search bar
+> Top tip: Duplicate the previous tab on your browser!
+
+Navigate to the **lambda** page on the aws console using the search bar
 
 Once on the page:
 
 1. Click create function
-2. Name your function `<your_panda_name>_order_status_lambda`
-3. Keep the rest of the default configurations
-4. Click **create function**
+2. Name your function `<your_panda_name>_order_handler_lambda`
+3. Select the configuration below
+   ![lambda configuration](./screenshots/lambda_1.png)
+   ![lambda permission](./screenshots/lambda_2.png)
+4. Click **Create function**
 
-Now lets give our lambda permission to send messages to our queue
+### Now lets give our lambda permission to send messages to our queue
 
 5. Navigate to configuration > permissions
 6. Click on the Role name under Execution role
 7. A new tab will open, click add permission and select attach policy
 8. Search for SQS and select `AmazonSQSFullAccess` and click attach policy
+
+---
 
 ## 3. Create an API
 
@@ -62,6 +68,8 @@ Navigate to API Gateway
 7. Click next and next again and then create finally
 
 You can now see if it works by making a **PUT** request to your invoke url followed by the path `/order_status` using your favourite API client. You should recieve a 200 OK response with "Hello from Lambda!" in the body!
+
+---
 
 ## 4. Make your lambda send messages to SQS!
 
