@@ -89,6 +89,9 @@ You can now see if it works by making a **PUT** request to your invoke url follo
 2. Copy the code in `sendToSQS.js` and paste it in the editor on the AWS console. Lets run through the code!
 3. REMEMBER TO ADD YOUR QUEUE URL TO THE PARAMS OBJECT IN THE CODE
 
+> you can get your Queue URL by going to SQS on the console > sqs > queues > click your queue. It should be displayed on the main page.
+> ![api routes](./screenshots/sqs_3.png)
+
 ```js
 QueueUrl: 'QUEUE URL HERE',
 ```
@@ -99,7 +102,7 @@ QueueUrl: 'QUEUE URL HERE',
 ```js
 {
 	"orderId": "1234993",
-	"customerEmail": "your@email.com",
+	"customerEmail": "<YOUR EMAIL>",
 	"orderStatus": "DISPATCHED"
 }
 ```
