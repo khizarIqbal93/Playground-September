@@ -4,8 +4,9 @@
 
 # Prerequisites
 
-- Modern browser
-- An API Client such as [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
+## - Modern browser
+
+## - An API Client such as [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
 
 ---
 
@@ -29,7 +30,7 @@ Once on the page:
 
 ---
 
-## 2. Create a lambda function
+## <a name="abcd"></a> 2. Create a lambda function
 
 > Top tip: Duplicate the previous tab on your browser!
 
@@ -78,7 +79,7 @@ You can now see if it works by making a **PUT** request to your invoke url follo
 
 ## 4. Make your lambda send messages to SQS!
 
-1. Navigate to the lambda you created in section 2
+1. Navigate to the lambda you created in [section 2](#abcd)
 2. Copy the code in `sendToSQS.js` and paste it in the editor on the AWS console. Lets run through the code!
 3. REMEMBER TO ADD YOUR QUEUE URL TO THE PARAMS OBJECT IN THE CODE
 
