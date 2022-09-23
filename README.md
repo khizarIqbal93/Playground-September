@@ -6,7 +6,7 @@
 
 ## - Modern browser
 
-## - An API Client such as [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
+## -Optional: An API Client such as [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
 
 ---
 
@@ -108,20 +108,25 @@ QueueUrl: 'QUEUE URL HERE',
 ```
 
 6. Check the response to see if it was successful!
-7. You can view the message in the queue by going to your queue and clicking `send and receive messages` and then clicking `Poll for messages`
+7. You can view the message in the queue by going to your queue and clicking `send and receive messages` and then clicking `Poll for messages` at the bottom.
 
 ---
 
 ## 5. Set up SQS poller lambda
 
-Now lets set up a lambda that will consume messages from the queue and do something.
+### Now lets set up a lambda that will consume messages from the queue and then send an email to the customer updating them about their order.
 
 1. Navigate to the lambda home page
 2. Select `Use a blueprint`
 3. Search for **sqs** in the search box
 4. Select `Process messages in an SQS queue` and click configure
+   ![poller setup](./screenshots/lambda_2/poller_1.png)
 5. name your lambda `<your_panda_name>_notification_lambda`
 6. Select `Create a new role from AWS policy templates`
 7. Name your role `<your_panda_name>_notification_lambda_role`
-8. Select your queue and then click create
-9. Copy the code in `poller.js` and paste it in the editor on the AWS console.
+8. For your SQS trigger select your queue
+   ![poller setup](./screenshots/lambda_2/poller_2.png)
+9. click Create
+10. Copy the code in `poller.js` and paste it in the editor on the AWS console.
+
+### now lets give our poller permissions to AWS SES (Simple Email Service) so that it can send emails
