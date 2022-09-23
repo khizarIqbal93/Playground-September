@@ -79,6 +79,15 @@ Once on the page:
 
 You can now see if it works by making a **PUT** request to your invoke url followed by the path `/order_status` using your favourite API client. You should receive a `200 OK` response with `"Hello from Lambda!"` in the body!
 
+## OR with cURL
+
+```sh
+curl -H "Content-Type: application/json" \
+  --request PUT \
+  --data '{"orderId": "1234993","customerEmail": "<YOUR EMAIL>","orderStatus": "DISPATCHED"}' \
+  <INVOKE URL>/order_status
+```
+
 > You are doing great!
 
 ---
@@ -105,6 +114,15 @@ QueueUrl: 'QUEUE URL HERE',
 	"customerEmail": "<YOUR EMAIL>",
 	"orderStatus": "DISPATCHED"
 }
+```
+
+## OR with cURL
+
+```sh
+curl -H "Content-Type: application/json" \
+  --request PUT \
+  --data '{"orderId": "1234993","customerEmail": "<YOUR EMAIL>","orderStatus": "DISPATCHED"}' \
+  <INVOKE URL>/order_status
 ```
 
 6. Check the response to see if it was successful!
