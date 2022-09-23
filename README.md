@@ -121,12 +121,48 @@ QueueUrl: 'QUEUE URL HERE',
 3. Search for **sqs** in the search box
 4. Select `Process messages in an SQS queue` and click configure
    ![poller setup](./screenshots/lambda_2/poller_1.png)
-5. name your lambda `<your_panda_name>_notification_lambda`
+5. Name your lambda `<your_panda_name>_notification_lambda`
 6. Select `Create a new role from AWS policy templates`
 7. Name your role `<your_panda_name>_notification_lambda_role`
 8. For your SQS trigger select your queue
    ![poller setup](./screenshots/lambda_2/poller_2.png)
-9. click Create
+9. Click Create
 10. Copy the code in `poller.js` and paste it in the editor on the AWS console.
 
 ### now lets give our poller permissions to AWS SES (Simple Email Service) so that it can send emails
+
+11. Click the configuration tab and then click on the role
+    ![poller setup](./screenshots/lambda_2/poller_3.png)
+12. A new tab will open up. Click add permissions > attach policy
+13. search for `sendEmailSES`
+14. select the policy and click Attach policies
+    ![poller SES permission](./screenshots/lambda_2/poller_4.png)
+
+### All Done! :tada: :tada: :tada: :tada:
+
+## 6. Let's take it for a spin!
+
+If you don't have an API client use this curl command to send a request to the API.
+
+> :warning: remember to put in your email and your API invoke URL
+
+```sh
+curl -H "Content-Type: application/json" \
+  --request PUT \
+  --data '{"orderId": "1234993","customerEmail": "<YOUR EMAIL>","orderStatus": "DISPATCHED"}' \
+  <INVOKE URL>/order_status
+```
+
+If you have Postman or Insomnia send a PUT request to `INVOKE URL/order_status` with following json in the request body:
+
+> :warning: remember to put in your email and your API invoke URL
+
+```js
+{
+	"orderId": "1234993",
+	"customerEmail": "<YOUR EMAIL>",
+	"orderStatus": "DISPATCHED"
+}
+```
+
+### Check your inbox
