@@ -15,7 +15,7 @@ exports.handler = async event => {
 
         Subject: { Data: 'Your order update' },
       },
-      Source: messageAttributes.CustomerEmail.stringValue,
+      Source: 'orders@devopsplayground.org',
     };
 
     try {
