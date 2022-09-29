@@ -44,6 +44,11 @@ Once on the page:
    ![lambda configuration](./screenshots//lambda_1/lambda_1.png)
 4. Select `Use existing role` and then select `panda_order_handler_lambda-role`
 5. Click **Create function**
+6. Click `Configuration` > `environnement variables` > add the following env variable:
+
+```env
+QUEUE_URL=YOUR QUEUE URL
+```
 
 > This role has all the permissions for this lambda
 

@@ -54,7 +54,7 @@ exports.handler = async (event, context, callback) => {
       },
     },
     MessageBody: message,
-    QueueUrl: 'QUEUE URL HERE',
+    QueueUrl: process.env.QUEUE_URL,
   };
 
   try {
