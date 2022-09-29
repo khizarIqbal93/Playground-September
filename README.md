@@ -42,20 +42,10 @@ Once on the page:
 2. Name your function `<your_panda_name>_order_handler_lambda`
 3. Select the configuration below
    ![lambda configuration](./screenshots//lambda_1/lambda_1.png)
-   ![lambda permission1](./screenshots/lambda_1/lambda_2.png)
-4. Click **Create function**
+4. Select `Use existing role` and then select `panda_order_handler_lambda-role`
+5. Click **Create function**
 
-### Now lets give our lambda permission to send messages to our queue
-
-5. Navigate to configuration > permissions
-6. Click on the Role name under Execution role
-   ![lambda permission2](./screenshots/lambda_1/lambda_3.png)
-7. A new tab will open, click add permission and select attach policy
-   ![lambda permission3](./screenshots/lambda_1/lambda_4.png)
-8. Search for SQS and select `AmazonSQSFullAccess` and click attach policy
-   ![lambda permission4](./screenshots/lambda_1/lambda_5.png)
-
-> :warning: Note: In the real world you would want to keep the permissions tighter!
+> This role has all the permissions for this lambda
 
 ---
 
@@ -140,21 +130,11 @@ curl -H "Content-Type: application/json" \
 4. Select `Process messages in an SQS queue` and click configure
    ![poller setup](./screenshots/lambda_2/poller_1.png)
 5. Name your lambda `<your_panda_name>_notification_lambda`
-6. Select `Create a new role from AWS policy templates`
-7. Name your role `<your_panda_name>_notification_lambda_role`
-8. For your SQS trigger select your queue
+6. Select `Use existing role` and then select `panda_notification_lambda_role`
+7. For your SQS trigger select your queue
    ![poller setup](./screenshots/lambda_2/poller_2.png)
-9. Click Create
-10. Copy the code in `poller.js` and paste it in the editor on the AWS console.
-
-### now lets give our poller permissions to AWS SES (Simple Email Service) so that it can send emails
-
-11. Click the configuration tab and then click on the role
-    ![poller setup](./screenshots/lambda_2/poller_3.png)
-12. A new tab will open up. Click add permissions > attach policy
-13. search for `sendEmailSES`
-14. select the policy and click Attach policies
-    ![poller SES permission](./screenshots/lambda_2/poller_4.png)
+8. Click Create
+9. Copy the code in `poller.js` and paste it in the editor on the AWS console.
 
 ### All Done! :tada: :tada: :tada: :tada:
 
